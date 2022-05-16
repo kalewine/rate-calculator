@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5d5e60;
+    font-family: AvenirNextCyr,Arial,sans-serif;
+    color: #f5f5f5;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 400;
+    height: 100%;
+}
+
+input[type=radio]:checked{
+    background: #42dbbd;
+
+}
+
+.rate-calc__section {
+    padding: 1rem;
+}
+
+.rate-calc__section-title {
+    font-size: 1rem;
+}
+
+.rate-calc__radios {
+  margin-top: 0.5rem;
+}
+
+.rate-calc__radio {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.rate-calc__radio > input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.styled-radio {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: solid 2px #42dbbd; 
+    border-radius: 50%;
+  }
+
+/* On mouse-over, add a grey background color */
+.rate-calc__radio:hover input ~ .styled-radio {
+    background-color: #5d5e60;
+
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .rate-calc__radio input:checked ~ .styled-radio {
+    background-color: #42dbbd;
+    border: none;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .styled-radio:after {
+    content: "";
+    position: relative;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .rate-calc__radio input:checked ~ .styled-radio:after {
+    display: block;
+   
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .rate-calc__radio .styled-radio:after {
+    border-radius: 50%;
+    background-color: #42dbbd;
+    border: 2px solid #737579;
+    width: 10px;
+    height: 10px;
+  }
+
+
+
+
+.rate-calc__slider {
+    position: relative;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+
+.hidden {
+    visibility: visible;
+}
+
+#mobile-minutes {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 2px; /* Specified height */
+    background: #b2b2b2; /* Grey background */
+    outline: none; /* Remove outline */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+  }
+
+
+.slider::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-left: 1.5%;
+    width: 23px; /* Set a specific slider handle width */
+    height: 14px; /* Slider handle height */
+    border-radius: 1.5px;
+    background: #42dbbd; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    margin-left: 1.5%;
+    width: 23px; /* Set a specific slider handle width */
+    height: 14px; /* Slider handle height */
+    border-radius: 1.5px;
+    background: #42dbbd; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  .slider::-ms-thumb {
+    margin-left: 1.5%;
+    width: 23px; /* Set a specific slider handle width */
+    height: 14px; /* Slider handle height */
+    border-radius: 1.5px;
+    background: #42dbbd; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+
+#slidervalue {
+    position: absolute;
+    bottom: 3rem;
+    width: 23px;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    margin-left: -0.1%;
+}
+
+#slider-lines {
+    position: absolute;
+    bottom: 46%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbfff5;
+    font-size: 8px;
+    font-weight: bold;
+    width: 23px;
+    height: 14px;
+    pointer-events: none;
+    margin-left: -0.1%;
+}
+
+
+datalist {
+    display: flex;  
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 700px;
+}
+
+datalist option {
+    display: flex;
+    width: 100%;
+}
+
+#valuelabels {
+    margin-left: 5px;
+}
+
+#valuelabels option {
+    justify-content: flex-end;
+    color: #b2b2b2;
+}
+
+#tickmarks {
+    margin-left: 1px;
+}
+
+#tickmarks option {
+    display: flex; 
+    justify-content: flex-end;
+    color:#b2b2b2;
+    font-weight: bold;
+    margin-top: -0.5rem;
+}
+
+#five {
+    margin-left: -2px;
+}
+
+
+.rate-calc__total {
+    position: relative;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.rate-total__title{
+    margin-right: 0.5rem;
+}
+
+.rate-total__result{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.rate-calc__total::after{
+    position: absolute;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: -4px;
+    left: 0;
+    background: #b2b2b2;
+}
+
+@media only screen and (max-width: 640px){
+    #slider-section {
+        display: none;
+    }
+
+    #mobile-minutes {
+        display: block;
+        padding-left: 0;
+    }
+
+    input[type=number]{
+        color: #f5f5f5;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: center;
+        height: 2rem;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: solid 2px #42dbbd;
+    }
+    
+    input[type=number]:focus{
+        outline: none !important;
+        border: 2px solid #c0fff2;
+        box-shadow: 0 0 2px #ffffff;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Calculator</title>
+</head>
+<body>
+    <div class="rate-calc">
+      <div class="rate-calc__section">
+        <h2 class='rate-calc__section-title'>Project Type</h2>
+          <div class='rate-calc__radios'>
+            
+              <label class='rate-calc__radio' for="game">
+                <input type="radio" id="game" name="project__type" value="game" checked>
+                <span class="styled-radio"></span>
+                Game
+              </label>
+              <label class='rate-calc__radio' for="film">
+                <input type="radio" id="film" name="project__type" value="film">
+                <span class="styled-radio"></span>
+                Film/TV/Video
+              </label>
+              <label class='rate-calc__radio' for="podcast">
+                <input type="radio" id="podcast" name="project__type" value="podcast">
+                <span class="styled-radio"></span>
+                Podcast
+              </label>
+          </div>
+      </div>
+         <div class="rate-calc__section">
+          <h2 class='rate-calc__section-title'>How many minutes of custom music do you need?</h2>
+          <div class="rate-calc__slider" id="slider-section">
+            <output id="slidervalue">1</output>
+            
+            <input type="range" list="tickmarks" min="1" max="30" value="1"  step ="1" class="slider" id="slider" oninput="slidervalue.value=value">
+              <div id="slider-lines">
+                <span class="slider-line">|<span>
+                <span class="slider-line">|</span>
+                <span class="slider-line">|</span>
+              </div>
+            </input>
+            <datalist id="tickmarks">
+              <option value="5">|</option>
+              <option value="10">|</option>
+              <option value="15">|</option>
+              <option value="20">|</option>
+              <option value="25">|</option>
+              <option value="30">|</option>
+            </datalist>
+            <datalist id="valuelabels">
+                <option value="5" label="5" id="five">
+                <option value="10" label="10">
+                <option value="15" label="15">
+                <option value="20" label="20">
+                <option value="25" label="25">
+                <option value="30" label="30">
+            </datalist>
+        </div>
+        <div class="rate-calc__section" id="mobile-minutes">
+          <label for="minutes">
+            <input required type="number" id="minutes" name="minutes" min="1" max="100" step="1">
+          </label>
+        </div>
+        </div>
+         <div class="rate-calc__section">
+          <h2 class='rate-calc__section-title'>How many business days until you need the music finished?</h2>
+            <div class='rate-calc__radios'>
+              
+                <label class='rate-calc__radio' for="20+">
+                  <input type="radio" id="20+" name="days" value="20+" checked>
+                  <span class="styled-radio"></span>
+                  20+ days
+                </label>
+              
+             
+                <label class='rate-calc__radio' for="10-19">
+                  <input type="radio" id="10-19" name="days" value="10-19">
+                  <span class="styled-radio"></span>
+                  10-19 days
+                </label>
+              
+             
+                <label class='rate-calc__radio' for="5-9">
+                  <input type="radio" id="5-9" name="days" value="5-9">
+                  <span class="styled-radio"></span>
+                  5-9 days
+                </label>
+             
+              
+                <label class='rate-calc__radio' for="2-4">
+                  <input type="radio" id="2-4" name="days" value="2-4">
+                  <span class="styled-radio"></span>
+                  2-4 days
+                </label>
+               
+            </div>
+        </div>
+        <div class="rate-calc__section">
+          <div class="rate-calc__total">
+            <h2 class='rate-total__title'>Total = </h2>
+            <p class="rate-total__result" id="output"></p>
+          </div>
+        </div>
+      </div>
+    <script src="index.js"></script>
+</body>
+</html>
